@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Box,
   Container,
@@ -12,7 +12,6 @@ import {
   Paper,
   TextField,
 } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import TimerIcon from '@mui/icons-material/Timer';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
@@ -154,7 +153,6 @@ const plans = [
 ];
 
 const Home = () => {
-  const navigate = useNavigate();
   const [selectedPlan, setSelectedPlan] = useState<string>('Complete');
 
   return (

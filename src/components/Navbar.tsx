@@ -11,7 +11,7 @@ import {
   ListItemText,
 } from '@mui/material';
 import { useState, useEffect } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const menuItems = [
@@ -140,7 +140,9 @@ const Navbar = () => {
             {menuItems.map((item) => (
               <Button
                 key={item.text}
-                onClick={(e) => handleSmoothScroll(e, item.href)}
+                component={Link}
+                to={item.href}
+                color="inherit"
                 sx={{
                   fontSize: '1.15rem',
                   fontWeight: 500,
@@ -148,7 +150,6 @@ const Navbar = () => {
                   borderRadius: 99,
                   px: 2.5,
                   py: 1.2,
-                  color: isScrolled ? 'secondary.main' : 'white',
                   textShadow: isScrolled
                     ? 'none'
                     : '0 2px 8px rgba(0,0,0,0.25)',
